@@ -174,6 +174,12 @@ angular.module('ideUiCore', ['ngResource'])
 		},
 		link: function(scope, el, attrs){
 			scope.perspectives = Perspectives.query();
+			scope.activePerspective = localStorage.getItem('DIRIGIBLE.application.promart.activePerspective');
+
+			scope.setActivePerspective = function(activePerspective) {
+				localStorage.setItem('DIRIGIBLE.application.promart.activePerspective', activePerspective);
+				scope.activePerspective = activePerspective;
+			};
 		},
 		templateUrl: '/services/v3/web/promart/resources/templates/sidebar.html'
 	}
