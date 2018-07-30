@@ -251,6 +251,130 @@
                         "length": 0,
                         "name": "SOLUTION_COMPONENT_COMPONENT"
                     }]
+            }, {
+                "name": "PROMART_PRODUCTS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PRODUCT_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 32,
+                        "name": "PRODUCT_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 512,
+                        "nullable": true,
+                        "name": "PRODUCT_DESCRIPTION"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_INDUSTRY"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_CATEGORY"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_VENDOR"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_REGION"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_COUNTRY"
+                    }]
+            }, {
+                "name": "PROMART_PRODUCT_PLANS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PRODUCT_PLAN_ID"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_PLAN_PRODUCT"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_PLAN_TYPE"
+                    }, {
+                        "type": "DOUBLE",
+                        "name": "PRICE"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_PLAN_SUPPORT"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_PLAN_SALES"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_PLAN_UNIT"
+                    }]
+            }, {
+                "name": "PROMART_PLAN_TYPES",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "PLAN_TYPE_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "PLAN_TYPE_NAME"
+                    }]
+            }, {
+                "name": "PROMART_SUPPORT_LEVELS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "SUPPORT_LEVEL_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "SUPPORT_LEVEL_NAME"
+                    }]
+            }, {
+                "name": "PROMART_SALES_MODELS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "SALES_MODEL_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "SALES_MODEL_NAME"
+                    }]
             }]
     }
 }

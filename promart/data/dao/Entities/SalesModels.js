@@ -1,16 +1,16 @@
 var query = require('db/v3/query');
 var daoApi = require('db/v3/dao');
 var dao = daoApi.create({
-	'table': 'PROMART_UOM',
+	'table': 'PROMART_SALES_MODELS',
 	'properties': [
 		{
 			'name': 'Id',
-			'column': 'UOM_ID',
+			'column': 'SALES_MODEL_ID',
 			'type': 'INTEGER',
 			'id': true,
 		}, {
 			'name': 'Name',
-			'column': 'UOM_NAME',
+			'column': 'SALES_MODEL_NAME',
 			'type': 'VARCHAR',
 			'required': true
 		}]
@@ -40,6 +40,6 @@ exports.count = function() {
 };
 
 exports.customDataCount = function() {
-	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM PROMART_UOM");
+	var resultSet = query.execute("SELECT COUNT(*) AS COUNT FROM PROMART_SALES_MODELS");
 	return resultSet !== null ? resultSet[0].COUNT : 0;
 };
