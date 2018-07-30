@@ -4,36 +4,5 @@
 		"type": "git",
 		"branch": "master",
 		"url": "https://github.com/promart-io/promart.git"
-	},
-	"dependencies": [{
-		"guid": "promart-accounts",
-		"url": "https://github.com/promart-io/promart-accounts.git",
-		"type": "git",
-		"branch": "master"
-	}, {
-		"guid": "promart-component-registry",
-		"url": "https://github.com/promart-io/promart-component-registry.git",
-		"type": "git",
-		"branch": "master"
-	}, {
-		"guid": "promart-data",
-		"url": "https://github.com/promart-io/promart-data.git",
-		"type": "git",
-		"branch": "master"
-	}, {
-		"guid": "promart-marketplace",
-		"url": "https://github.com/promart-io/promart-marketplace.git",
-		"type": "git",
-		"branch": "master"
-	}, {
-		"guid": "promart-payments",
-		"url": "https://github.com/promart-io/promart-payments.git",
-		"type": "git",
-		"branch": "master"
-	}, {
-		"guid": "promart-solution-composer",
-		"url": "https://github.com/promart-io/promart-solution-composer.git",
-		"type": "git",
-		"branch": "master"
-	}]
+	}
 }

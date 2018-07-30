@@ -1,0 +1,5 @@
+{
+	"description": "Registry perspective",
+	"extensionPoint": "launchpad-promart-perspective",
+	"module": "promart/ui/Registry/extensions/perspective/perspective.js"
+}

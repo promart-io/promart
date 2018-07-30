@@ -1,0 +1,5 @@
+{
+	"description": "Registry tiles",
+	"extensionPoint": "launchpad-promart-tiles",
+	"module": "promart/ui/Registry/views/Components/extensions/tile/tile.js"
+}

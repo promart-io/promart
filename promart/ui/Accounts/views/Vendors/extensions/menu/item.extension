@@ -1,0 +1,5 @@
+{
+	"description": "Vendors menu",
+	"extensionPoint": "shell-promart-menu",
+	"module": "promart/views/Vendors/menu/item.js"
+}

@@ -1,0 +1,213 @@
+{
+    "schema": {
+        "structures": [
+            {
+                "name": "PROMART_VENDORS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "VENDOR_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "VENDOR_NAME"
+                    }, {
+                        "type": "DOUBLE",
+                        "length": 20,
+                        "nullable": true,
+                        "name": "VENDOR_RATING"
+                    }]
+            }, {
+                "name": "PROMART_CUSTOMERS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CUSTOMER_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 32,
+                        "name": "CUSTOMER_LAST_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 32,
+                        "name": "CUSTOMER_LAST_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "CUSTOMER_EMAIL"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "nullable": true,
+                        "name": "CUSTOMER_ADDRESS"
+                    }]
+            }, {
+                "name": "PROMART_DEVELOPERS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "DEVELOPER_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "DEVELOPER_NAME"
+                    }]
+            }, {
+                "name": "PROMART_COMPONENTS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "COMPONENT_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "COMPONENT_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "name": "COMPONENT_REPOSITORY"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 512,
+                        "nullable": true,
+                        "name": "COMPONENT_DESCRIPTION"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "COMPONENT_INDUSTRY"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "COMPONENT_CATEGORY"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "COMPONENT_LICENSE"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "COMPONENT_DEVELOPER"
+                    }]
+            }, {
+                "name": "PROMART_INDUSTRIES",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "INDUSTRY_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "INDUSTRY_NAME"
+                    }]
+            }, {
+                "name": "PROMART_CATEGORIES",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "CATEGORY_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "CATEGORY_NAME"
+                    }]
+            }, {
+                "name": "PROMART_LICENSES",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "LICENSE_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "LICENSE_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 128,
+                        "name": "LICENSE_LOCATION"
+                    }]
+            }, {
+                "name": "PROMART_REGIONS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "REGION_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "REGION_NAME"
+                    }]
+            }, {
+                "name": "PROMART_COUNTRIES",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "COUNTRY_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "COUNTRY_NAME"
+                    }]
+            }, {
+                "name": "PROMART_UOM",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "UOM_ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "UOM_NAME"
+                    }]
+            }]
+    }
+}
