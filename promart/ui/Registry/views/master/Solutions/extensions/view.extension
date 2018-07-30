@@ -1,0 +1,5 @@
+{
+	"description": "Registry view",
+	"extensionPoint": "launchpad-promart-Registry-view",
+	"module": "promart/ui/Registry/views/master/Solutions/extensions/view.js"
+}

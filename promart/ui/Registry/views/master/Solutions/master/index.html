@@ -14,7 +14,7 @@
 
 <body ng-controller="PageController">
 	<div class="page-header container">
-		<h1>Manage Components</h1>
+		<h1>Manage Solutions</h1>
 	</div>
 	<div class="container">
 		<button type="button" ng-click="openNewDialog()" class="btn btn-lg btn-primary pull-right">New</button>
@@ -23,20 +23,17 @@
 				<tr>
 					<th>#</th>
 					<th class="text-capitalize">Name</th>
-					<th class="text-capitalize">Industry</th>
-					<th class="text-capitalize">Category</th>
 					<th></th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="next in data">
+				<tr ng-repeat="next in data" ng-class="{'bg-info':next && next.Id == selectedEntity.Id}" style="cursor: pointer;" ng-click="selectEntity(next)">
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Name}}</td>
-					<td>{{industryOptionValue(next.Industry)}}</td>
-					<td>{{categoryOptionValue(next.Category)}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
-						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>					</td>
+						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -60,32 +57,12 @@
 							<input type="text" class="form-control" placeholder="Enter name" ng-model="entity.Name">
 						</div>
 						<div class="form-group">
-							<label>Repository</label>
-							<input type="text" class="form-control" placeholder="Enter repository" ng-model="entity.Repository">
-						</div>
-						<div class="form-group">
 							<label>Description</label>
 							<textarea class="form-control" placeholder="Enter description" ng-model="entity.Description"></textarea>
 						</div>
-						<div class="form-group">
-							<label>Industry</label>
-							<select class="form-control" ng-options="o.Id as o.Name for o in industryOptions" ng-model="entity.Industry"></select>
-						</div>
-						<div class="form-group">
-							<label>Category</label>
-							<select class="form-control" ng-options="o.Id as o.Name for o in categoryOptions" ng-model="entity.Category"></select>
-						</div>
-						<div class="form-group">
-							<label>License</label>
-							<select class="form-control" ng-options="o.Id as o.Name for o in licenseOptions" ng-model="entity.License"></select>
-						</div>
-						<div class="form-group">
-							<label>Developer</label>
-							<select class="form-control" ng-options="o.Id as o.Name for o in developerOptions" ng-model="entity.Developer"></select>
-						</div>
 					</form>
 					<div ng-show="actionType === 'delete'">
-						You are going to delete <b>Components</b> with <b>Id = {{entity.Id}}</b>.
+						You are going to delete <b>Solutions</b> with <b>Id = {{entity.Id}}</b>.
 					</div>
 				</div>
 				<div class="modal-footer">

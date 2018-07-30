@@ -1,0 +1,5 @@
+{
+	"description": "SolutionComponents view",
+	"extensionPoint": "launchpad-promart-Registry-Solutions-view",
+	"module": "promart/ui/Registry/views/master/details/SolutionComponents/extensions/view.js"
+}

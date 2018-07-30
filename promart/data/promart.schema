@@ -208,6 +208,49 @@
                         "length": 64,
                         "name": "UOM_NAME"
                     }]
+            }, {
+                "name": "PROMART_SOLUTIONS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "ID"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 64,
+                        "name": "SOLUTION_NAME"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 512,
+                        "nullable": true,
+                        "name": "SOLUTION_DESCRIPTION"
+                    }]
+            }, {
+                "name": "PROMART_SOLUTION_COMPONENTS",
+                "type": "TABLE",
+                "columns": [
+                    {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "primaryKey": true,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "SOLUTION_COMPONENT_ID"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "identity": true,
+                        "nullable": true,
+                        "name": "SOLUTION_COMPONENT_SOLUTION"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "SOLUTION_COMPONENT_COMPONENT"
+                    }]
             }]
     }
 }
