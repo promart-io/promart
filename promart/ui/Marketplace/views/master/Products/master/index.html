@@ -33,8 +33,8 @@
 				<tr ng-repeat="next in data" ng-class="{'bg-info':next && next.Id == selectedEntity.Id}" style="cursor: pointer;" ng-click="selectEntity(next)">
 					<td>{{(dataPage - 1) * dataLimit + $index + 1}}</td>
 					<td>{{next.Name}}</td>
-					<td>{{next.Industry}}</td>
-					<td>{{next.Category}}</td>
+					<td>{{industryOptionValue(next.Industry)}}</td>
+					<td>{{categoryOptionValue(next.Category)}}</td>
 					<td>{{next.Vendor}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
@@ -68,11 +68,11 @@
 						</div>
 						<div class="form-group">
 							<label>Industry</label>
-							<input type="text" class="form-control" placeholder="Enter industry" ng-model="entity.Industry">
+							<select class="form-control" ng-options="o.Id as o.Name for o in industryOptions" ng-model="entity.Industry"></select>
 						</div>
 						<div class="form-group">
 							<label>Category</label>
-							<input type="text" class="form-control" placeholder="Enter category" ng-model="entity.Category">
+							<select class="form-control" ng-options="o.Id as o.Name for o in categoryOptions" ng-model="entity.Category"></select>
 						</div>
 						<div class="form-group">
 							<label>Vendor</label>
@@ -80,7 +80,7 @@
 						</div>
 						<div class="form-group">
 							<label>Region</label>
-							<input type="text" class="form-control" placeholder="Enter region" ng-model="entity.Region">
+							<select class="form-control" ng-options="o.Id as o.Name for o in regionOptions" ng-model="entity.Region"></select>
 						</div>
 						<div class="form-group">
 							<label>Country</label>

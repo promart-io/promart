@@ -17,6 +17,15 @@ angular.module('page')
 		onEntityRefresh: function(callback) {
 			on('promart.Marketplace.Products.refresh', callback);
 		},
+		onIndustriesModified: function(callback) {
+			on('promart.Marketplace.Industries.modified', callback);
+		},
+		onCategoriesModified: function(callback) {
+			on('promart.Marketplace.Categories.modified', callback);
+		},
+		onRegionsModified: function(callback) {
+			on('promart.Marketplace.Regions.modified', callback);
+		},
 		onCountriesModified: function(callback) {
 			on('promart.Marketplace.Countries.modified', callback);
 		},
@@ -31,7 +40,16 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/promart/api/Marketplace/Products.js';
+	var industryOptionsApi = '/services/v3/js/promart/api/Entities/Industries.js';
+	var categoryOptionsApi = '/services/v3/js/promart/api/Entities/Categories.js';
+	var regionOptionsApi = '/services/v3/js/promart/api/Entities/Regions.js';
 	var countryOptionsApi = '/services/v3/js/promart/api/Entities/Countries.js';
+
+	$scope.industryOptions = [];
+
+	$scope.categoryOptions = [];
+
+	$scope.regionOptions = [];
 
 	$scope.countryOptions = [];
 
@@ -40,6 +58,30 @@ angular.module('page')
 	};
 	$scope.dateFormats = ['yyyy/MM/dd', 'dd-MMMM-yyyy', 'dd.MM.yyyy', 'shortDate'];
 	$scope.dateFormat = $scope.dateFormats[0];
+
+	function industryOptionsLoad() {
+		$http.get(industryOptionsApi)
+		.success(function(data) {
+			$scope.industryOptions = data;
+		});
+	}
+	industryOptionsLoad();
+
+	function categoryOptionsLoad() {
+		$http.get(categoryOptionsApi)
+		.success(function(data) {
+			$scope.categoryOptions = data;
+		});
+	}
+	categoryOptionsLoad();
+
+	function regionOptionsLoad() {
+		$http.get(regionOptionsApi)
+		.success(function(data) {
+			$scope.regionOptions = data;
+		});
+	}
+	regionOptionsLoad();
 
 	function countryOptionsLoad() {
 		$http.get(countryOptionsApi)
@@ -141,6 +183,33 @@ angular.module('page')
 		});
 	};
 
+	$scope.industryOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.industryOptions.length; i ++) {
+			if ($scope.industryOptions[i].Id === optionKey) {
+				return $scope.industryOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
+	$scope.categoryOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.categoryOptions.length; i ++) {
+			if ($scope.categoryOptions[i].Id === optionKey) {
+				return $scope.categoryOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
+	$scope.regionOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.regionOptions.length; i ++) {
+			if ($scope.regionOptions[i].Id === optionKey) {
+				return $scope.regionOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$scope.countryOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.countryOptions.length; i ++) {
 			if ($scope.countryOptions[i].Id === optionKey) {
@@ -151,6 +220,9 @@ angular.module('page')
 	};
 
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
+	$messageHub.onIndustriesModified(industryOptionsLoad);
+	$messageHub.onCategoriesModified(categoryOptionsLoad);
+	$messageHub.onRegionsModified(regionOptionsLoad);
 	$messageHub.onCountriesModified(countryOptionsLoad);
 
 	$scope.selectEntity = function(entity) {
