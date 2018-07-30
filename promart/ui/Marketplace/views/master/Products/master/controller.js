@@ -23,6 +23,9 @@ angular.module('page')
 		onCategoriesModified: function(callback) {
 			on('promart.Marketplace.Categories.modified', callback);
 		},
+		onVendorsModified: function(callback) {
+			on('promart.Marketplace.Vendors.modified', callback);
+		},
 		onRegionsModified: function(callback) {
 			on('promart.Marketplace.Regions.modified', callback);
 		},
@@ -42,12 +45,15 @@ angular.module('page')
 	var api = '/services/v3/js/promart/api/Marketplace/Products.js';
 	var industryOptionsApi = '/services/v3/js/promart/api/Entities/Industries.js';
 	var categoryOptionsApi = '/services/v3/js/promart/api/Entities/Categories.js';
+	var vendorOptionsApi = '/services/v3/js/promart/api/Accounts/Vendors.js';
 	var regionOptionsApi = '/services/v3/js/promart/api/Entities/Regions.js';
 	var countryOptionsApi = '/services/v3/js/promart/api/Entities/Countries.js';
 
 	$scope.industryOptions = [];
 
 	$scope.categoryOptions = [];
+
+	$scope.vendorOptions = [];
 
 	$scope.regionOptions = [];
 
@@ -74,6 +80,14 @@ angular.module('page')
 		});
 	}
 	categoryOptionsLoad();
+
+	function vendorOptionsLoad() {
+		$http.get(vendorOptionsApi)
+		.success(function(data) {
+			$scope.vendorOptions = data;
+		});
+	}
+	vendorOptionsLoad();
 
 	function regionOptionsLoad() {
 		$http.get(regionOptionsApi)
@@ -201,6 +215,15 @@ angular.module('page')
 		return null;
 	};
 
+	$scope.vendorOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.vendorOptions.length; i ++) {
+			if ($scope.vendorOptions[i].Id === optionKey) {
+				return $scope.vendorOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$scope.regionOptionValue = function(optionKey) {
 		for (var i = 0 ; i < $scope.regionOptions.length; i ++) {
 			if ($scope.regionOptions[i].Id === optionKey) {
@@ -222,6 +245,7 @@ angular.module('page')
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
 	$messageHub.onIndustriesModified(industryOptionsLoad);
 	$messageHub.onCategoriesModified(categoryOptionsLoad);
+	$messageHub.onVendorsModified(vendorOptionsLoad);
 	$messageHub.onRegionsModified(regionOptionsLoad);
 	$messageHub.onCountriesModified(countryOptionsLoad);
 

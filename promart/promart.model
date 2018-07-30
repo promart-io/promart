@@ -1488,7 +1488,7 @@
                         "relationshipName": "Products_Vendors",
                         "relationshipEntityName": "Vendors",
                         "relationshipEntityPerspectiveName": "Accounts",
-                        "widgetType": "TEXTBOX",
+                        "widgetType": "DROPDOWN",
                         "widgetLength": "20",
                         "widgetLabel": "Vendor",
                         "widgetShortLabel": "Vendor",

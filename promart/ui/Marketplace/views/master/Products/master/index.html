@@ -35,7 +35,7 @@
 					<td>{{next.Name}}</td>
 					<td>{{industryOptionValue(next.Industry)}}</td>
 					<td>{{categoryOptionValue(next.Category)}}</td>
-					<td>{{next.Vendor}}</td>
+					<td>{{vendorOptionValue(next.Vendor)}}</td>
 					<td>
 						<i class="close fa fa-remove" ng-click="openDeleteDialog(next)" style="font-size: 1.4em"></i>
 						<i class="close fa fa-bars" ng-click="openEditDialog(next)" style="margin-right: 0.5em; font-size: 1.4em"></i>
@@ -76,7 +76,7 @@
 						</div>
 						<div class="form-group">
 							<label>Vendor</label>
-							<input type="text" class="form-control" placeholder="Enter vendor" ng-model="entity.Vendor">
+							<select class="form-control" ng-options="o.Id as o.Name for o in vendorOptions" ng-model="entity.Vendor"></select>
 						</div>
 						<div class="form-group">
 							<label>Region</label>
