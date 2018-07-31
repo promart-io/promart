@@ -313,6 +313,7 @@
                         "name": "PRODUCT_PLAN_TYPE"
                     }, {
                         "type": "DOUBLE",
+                        "length": 20,
                         "name": "PRICE"
                     }, {
                         "type": "INTEGER",

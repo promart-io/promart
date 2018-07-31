@@ -1,0 +1,5 @@
+{
+	"description": "Accounts tiles",
+	"extensionPoint": "launchpad-promart-tiles",
+	"module": "promart/ui/Accounts/views/Customers/extensions/tile/tile.js"
+}
