@@ -32,6 +32,9 @@ angular.module('page')
 		onUoMModified: function(callback) {
 			on('promart.Marketplace.UoM.modified', callback);
 		},
+		onProductsSelected: function(callback) {
+			on('promart.Marketplace.Products.selected', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		}
@@ -129,7 +132,7 @@ angular.module('page')
 		.success(function(data) {
 			$scope.dataCount = data;
 			$scope.dataPages = Math.ceil($scope.dataCount / $scope.dataLimit);
-			$http.get(api + '?=' + $scope.masterEntityId + '&$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
+			$http.get(api + '?Product=' + $scope.masterEntityId + '&$offset=' + ((pageNumber - 1) * $scope.dataLimit) + '&$limit=' + $scope.dataLimit)
 			.success(function(data) {
 				$scope.data = data;
 			});
@@ -160,6 +163,7 @@ angular.module('page')
 	};
 
 	$scope.create = function() {
+		$scope.entity.Product = $scope.masterEntityId;
 		$http.post(api, JSON.stringify($scope.entity))
 		.success(function(data) {
 			$scope.loadPage($scope.dataPage);
@@ -172,6 +176,7 @@ angular.module('page')
 	};
 
 	$scope.update = function() {
+		$scope.entity.Product = $scope.masterEntityId;
 
 		$http.put(api + '/' + $scope.entity.Id, JSON.stringify($scope.entity))
 		.success(function(data) {
@@ -242,6 +247,10 @@ angular.module('page')
 	$messageHub.onSalesModelsModified(salesOptionsLoad);
 	$messageHub.onUoMModified(unitOptionsLoad);
 
+	$messageHub.onProductsSelected(function(event) {
+		$scope.masterEntityId = event.data.id;
+		$scope.loadPage($scope.dataPage);
+	});
 
 	function toggleEntityModal() {
 		$('#entityModal').modal('toggle');

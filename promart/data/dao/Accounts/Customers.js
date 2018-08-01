@@ -10,7 +10,7 @@ var dao = daoApi.create({
 			'id': true,
 		}, {
 			'name': 'FirstName',
-			'column': 'CUSTOMER_LAST_NAME',
+			'column': 'CUSTOMER_FIRST_NAME',
 			'type': 'VARCHAR',
 			'required': true
 		}, {

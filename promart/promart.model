@@ -155,7 +155,7 @@
                     },
                     {
                         "name": "FirstName",
-                        "dataName": "CUSTOMER_LAST_NAME",
+                        "dataName": "CUSTOMER_FIRST_NAME",
                         "dataType": "VARCHAR",
                         "dataLength": 32,
                         "dataDefaultValue": "",
@@ -1558,6 +1558,13 @@
                         "widgetDropDownKey": "Id",
                         "widgetDropDownValue": "Name"
                     }
+                ],
+                "compositions": [
+                    {
+                        "entityName": "ProductPlans",
+                        "entityProperty": "Product",
+                        "localProperty": "Id"
+                    }
                 ]
             },
             {
@@ -1618,8 +1625,8 @@
                         "dataUnique": "false",
                         "dataPrecision": null,
                         "dataScale": null,
-                        "relationshipType": null,
-                        "relationshipCardinality": null,
+                        "relationshipType": "COMPOSITION",
+                        "relationshipCardinality": "1_n",
                         "relationshipName": "ProductPlans_Products",
                         "relationshipEntityName": "Products",
                         "relationshipEntityPerspectiveName": "Marketplace",

@@ -36,7 +36,7 @@
                     }, {
                         "type": "VARCHAR",
                         "length": 32,
-                        "name": "CUSTOMER_LAST_NAME"
+                        "name": "CUSTOMER_FIRST_NAME"
                     }, {
                         "type": "VARCHAR",
                         "length": 32,

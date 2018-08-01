@@ -59,10 +59,6 @@
 				<div class="modal-body">
 					<form ng-hide="actionType === 'delete'">
 						<div class="form-group">
-							<label>Product</label>
-							<select class="form-control" ng-options="o.Id as o.Name for o in productOptions" ng-model="entity.Product"></select>
-						</div>
-						<div class="form-group">
 							<label>Type</label>
 							<select class="form-control" ng-options="o.Id as o.Name for o in typeOptions" ng-model="entity.Type"></select>
 						</div>
