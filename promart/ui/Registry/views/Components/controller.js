@@ -37,9 +37,9 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/promart/api/Registry/Components.js';
-	var industryOptionsApi = '/services/v3/js/promart/api/Entities/Industries.js';
-	var categoryOptionsApi = '/services/v3/js/promart/api/Entities/Categories.js';
-	var licenseOptionsApi = '/services/v3/js/promart/api/Entities/Licenses.js';
+	var industryOptionsApi = '/services/v3/js/promart/api/Registry/Industries.js';
+	var categoryOptionsApi = '/services/v3/js/promart/api/Registry/Categories.js';
+	var licenseOptionsApi = '/services/v3/js/promart/api/Registry/Licenses.js';
 	var developerOptionsApi = '/services/v3/js/promart/api/Accounts/Developers.js';
 
 	$scope.industryOptions = [];

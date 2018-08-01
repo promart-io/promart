@@ -1,5 +1,0 @@
-{
-	"description": "Entities perspective",
-	"extensionPoint": "launchpad-promart-perspective",
-	"module": "promart/ui/Entities/extensions/perspective/perspective.js"
-}

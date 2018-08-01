@@ -43,11 +43,11 @@ angular.module('page')
 .controller('PageController', function ($scope, $http, $messageHub) {
 
 	var api = '/services/v3/js/promart/api/Marketplace/Products.js';
-	var industryOptionsApi = '/services/v3/js/promart/api/Entities/Industries.js';
-	var categoryOptionsApi = '/services/v3/js/promart/api/Entities/Categories.js';
+	var industryOptionsApi = '/services/v3/js/promart/api/Registry/Industries.js';
+	var categoryOptionsApi = '/services/v3/js/promart/api/Registry/Categories.js';
 	var vendorOptionsApi = '/services/v3/js/promart/api/Accounts/Vendors.js';
-	var regionOptionsApi = '/services/v3/js/promart/api/Entities/Regions.js';
-	var countryOptionsApi = '/services/v3/js/promart/api/Entities/Countries.js';
+	var regionOptionsApi = '/services/v3/js/promart/api/Registry/Regions.js';
+	var countryOptionsApi = '/services/v3/js/promart/api/Registry/Countries.js';
 
 	$scope.industryOptions = [];
 

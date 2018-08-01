@@ -1,5 +1,5 @@
 var rs = require('http/v3/rs');
-var dao = require('promart/data/dao/Entities/Licenses');
+var dao = require('promart/data/dao/Registry/Regions');
 var http = require('promart/api/http');
 
 rs.service()
@@ -24,14 +24,14 @@ rs.service()
 			if (entity) {
 			    http.sendResponseOk(entity);
 			} else {
-				http.sendResponseNotFound('Licenses not found');
+				http.sendResponseNotFound('Regions not found');
 			}
 		})
 	.resource('')
 		.post(function(ctx, request, response) {
 			var entity = request.getJSON();
 			entity.Id = dao.create(entity);
-			response.setHeader('Content-Location', '/services/v3/js/promart/api/Licenses.js/' + entity.Id);
+			response.setHeader('Content-Location', '/services/v3/js/promart/api/Regions.js/' + entity.Id);
 			http.sendResponseCreated(entity);
 		})
 	.resource('{id}')
@@ -49,7 +49,7 @@ rs.service()
 				dao.delete(id);
 				http.sendResponseNoContent();
 			} else {
-				http.sendResponseNotFound('Licenses not found');
+				http.sendResponseNotFound('Regions not found');
 			}
 		})
 .execute();

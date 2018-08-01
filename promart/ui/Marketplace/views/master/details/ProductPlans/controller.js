@@ -41,10 +41,10 @@ angular.module('page')
 
 	var api = '/services/v3/js/promart/api/Marketplace/ProductPlans.js';
 	var productOptionsApi = '/services/v3/js/promart/api/Marketplace/Products.js';
-	var typeOptionsApi = '/services/v3/js/promart/api/Entities/PlanTypes.js';
-	var supportOptionsApi = '/services/v3/js/promart/api/Entities/SupportLevels.js';
-	var salesOptionsApi = '/services/v3/js/promart/api/Entities/SalesModels.js';
-	var unitOptionsApi = '/services/v3/js/promart/api/Entities/UoM.js';
+	var typeOptionsApi = '/services/v3/js/promart/api/Marketplace/PlanTypes.js';
+	var supportOptionsApi = '/services/v3/js/promart/api/Marketplace/SupportLevels.js';
+	var salesOptionsApi = '/services/v3/js/promart/api/Marketplace/SalesModels.js';
+	var unitOptionsApi = '/services/v3/js/promart/api/Marketplace/UoM.js';
 
 	$scope.dateOptions = {
 		startingDay: 1

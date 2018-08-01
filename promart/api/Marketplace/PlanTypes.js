@@ -1,5 +1,5 @@
 var rs = require('http/v3/rs');
-var dao = require('promart/data/dao/Entities/PlanTypes');
+var dao = require('promart/data/dao/Marketplace/PlanTypes');
 var http = require('promart/api/http');
 
 rs.service()

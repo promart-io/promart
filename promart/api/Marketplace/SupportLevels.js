@@ -1,5 +1,5 @@
 var rs = require('http/v3/rs');
-var dao = require('promart/data/dao/Entities/Industries');
+var dao = require('promart/data/dao/Marketplace/SupportLevels');
 var http = require('promart/api/http');
 
 rs.service()
@@ -24,14 +24,14 @@ rs.service()
 			if (entity) {
 			    http.sendResponseOk(entity);
 			} else {
-				http.sendResponseNotFound('Industries not found');
+				http.sendResponseNotFound('SupportLevels not found');
 			}
 		})
 	.resource('')
 		.post(function(ctx, request, response) {
 			var entity = request.getJSON();
 			entity.Id = dao.create(entity);
-			response.setHeader('Content-Location', '/services/v3/js/promart/api/Industries.js/' + entity.Id);
+			response.setHeader('Content-Location', '/services/v3/js/promart/api/SupportLevels.js/' + entity.Id);
 			http.sendResponseCreated(entity);
 		})
 	.resource('{id}')
@@ -49,7 +49,7 @@ rs.service()
 				dao.delete(id);
 				http.sendResponseNoContent();
 			} else {
-				http.sendResponseNotFound('Industries not found');
+				http.sendResponseNotFound('SupportLevels not found');
 			}
 		})
 .execute();
