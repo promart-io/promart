@@ -32,6 +32,9 @@ angular.module('page')
 		onCountriesModified: function(callback) {
 			on('promart.Marketplace.Countries.modified', callback);
 		},
+		onSolutionsModified: function(callback) {
+			on('promart.Marketplace.Solutions.modified', callback);
+		},
 		messageEntityModified: function() {
 			message('modified');
 		},
@@ -48,6 +51,7 @@ angular.module('page')
 	var vendorOptionsApi = '/services/v3/js/promart/api/Accounts/Vendors.js';
 	var regionOptionsApi = '/services/v3/js/promart/api/Registry/Regions.js';
 	var countryOptionsApi = '/services/v3/js/promart/api/Registry/Countries.js';
+	var solutionOptionsApi = '/services/v3/js/promart/api/Registry/Solutions.js';
 
 	$scope.industryOptions = [];
 
@@ -58,6 +62,8 @@ angular.module('page')
 	$scope.regionOptions = [];
 
 	$scope.countryOptions = [];
+
+	$scope.solutionOptions = [];
 
 	$scope.dateOptions = {
 		startingDay: 1
@@ -104,6 +110,14 @@ angular.module('page')
 		});
 	}
 	countryOptionsLoad();
+
+	function solutionOptionsLoad() {
+		$http.get(solutionOptionsApi)
+		.success(function(data) {
+			$scope.solutionOptions = data;
+		});
+	}
+	solutionOptionsLoad();
 
 	$scope.dataPage = 1;
 	$scope.dataCount = 0;
@@ -242,12 +256,22 @@ angular.module('page')
 		return null;
 	};
 
+	$scope.solutionOptionValue = function(optionKey) {
+		for (var i = 0 ; i < $scope.solutionOptions.length; i ++) {
+			if ($scope.solutionOptions[i].Id === optionKey) {
+				return $scope.solutionOptions[i].Name;
+			}
+		}
+		return null;
+	};
+
 	$messageHub.onEntityRefresh($scope.loadPage($scope.dataPage));
 	$messageHub.onIndustriesModified(industryOptionsLoad);
 	$messageHub.onCategoriesModified(categoryOptionsLoad);
 	$messageHub.onVendorsModified(vendorOptionsLoad);
 	$messageHub.onRegionsModified(regionOptionsLoad);
 	$messageHub.onCountriesModified(countryOptionsLoad);
+	$messageHub.onSolutionsModified(solutionOptionsLoad);
 
 	$scope.selectEntity = function(entity) {
 		$scope.selectedEntity = entity;

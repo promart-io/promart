@@ -291,6 +291,10 @@
                         "type": "INTEGER",
                         "length": 0,
                         "name": "PRODUCT_COUNTRY"
+                    }, {
+                        "type": "INTEGER",
+                        "length": 0,
+                        "name": "PRODUCT_SOLUTION"
                     }]
             }, {
                 "name": "PROMART_PRODUCT_PLANS",
