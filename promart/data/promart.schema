@@ -295,6 +295,11 @@
                         "type": "INTEGER",
                         "length": 0,
                         "name": "PRODUCT_SOLUTION"
+                    }, {
+                        "type": "VARCHAR",
+                        "length": 255,
+                        "nullable": true,
+                        "name": "PRODUCT_IMAGE"
                     }]
             }, {
                 "name": "PROMART_PRODUCT_PLANS",

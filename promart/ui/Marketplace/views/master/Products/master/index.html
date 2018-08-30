@@ -90,6 +90,10 @@
 							<label>Solution</label>
 							<select class="form-control" ng-options="o.Id as o.Name for o in solutionOptions" ng-model="entity.Solution"></select>
 						</div>
+						<div class="form-group">
+							<label>Image</label>
+							<input type="text" class="form-control" placeholder="Enter image" ng-model="entity.Image">
+						</div>
 					</form>
 					<div ng-show="actionType === 'delete'">
 						You are going to delete <b>Products</b> with <b>Id = {{entity.Id}}</b>.
