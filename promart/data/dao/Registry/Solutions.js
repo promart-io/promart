@@ -5,7 +5,7 @@ var dao = daoApi.create({
 	'properties': [
 		{
 			'name': 'Id',
-			'column': 'ID',
+			'column': 'SOLUTION_ID',
 			'type': 'INTEGER',
 			'id': true,
 		}, {
@@ -16,6 +16,14 @@ var dao = daoApi.create({
 		}, {
 			'name': 'Description',
 			'column': 'SOLUTION_DESCRIPTION',
+			'type': 'VARCHAR',
+		}, {
+			'name': 'Repository',
+			'column': 'SOLUTION_REPOSITORY',
+			'type': 'VARCHAR',
+		}, {
+			'name': 'URI',
+			'column': 'SOLUTION_URI',
 			'type': 'VARCHAR',
 		}]
 });
